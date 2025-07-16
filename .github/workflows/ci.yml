@@ -1,15 +1,27 @@
 name: CI
 
 on:
-  push:
-    branches: 
-      - master
-      - integration
-      - experimental*
-      - release_*
   repository_dispatch:
     types:
       - metwork-trigger*
+  workflow_dispatch:
+    inputs:
+      workflow_branch:
+        description: branch to use
+        required: true
+        type: string
+      workflow_tag:
+        description: tag to use
+        required: true
+        type: string
+      workflow_repo:
+        description: repository to use (mfserv, mfdata, mfbase)
+        required: true
+        type: string
+      workflow_rocky_version:
+        description: rocky version (8, 9, 10)
+        required: true
+        type: string
 
 env:
     WORKFLOW_SCRIPTS_DIR: .github/workflows
