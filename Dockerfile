@@ -9,7 +9,7 @@ ENV DCO_CRONIE_START=1 \
 ARG BRANCH
 RUN echo -e "[metwork_${BRANCH}]\n\
 name=Metwork Release Branch ${BRANCH}\n\
-baseurl=http://metwork-framework.org/pub/metwork/releases/rpms/${BRANCH}/${ROCKY}/\n\
+baseurl=http://metwork-framework.org/pub/metwork/releases/rpms/${BRANCH}/centos8/\n\
 gpgcheck=0\n\
 enabled=1\n\
 metadata_expire=0\n" >/etc/yum.repos.d/metwork.repo
