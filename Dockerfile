@@ -14,6 +14,8 @@ gpgcheck=0\n\
 enabled=1\n\
 metadata_expire=0\n" >/etc/yum.repos.d/metwork.repo
 
+ARG REPO
+
 RUN yum clean all
 RUN yum -y install metwork-${REPO}-full langpacks-fr
 RUN yum -y install metwork-mfext-layer-python3_scientific_core metwork-mfext-layer-python3_devtools
