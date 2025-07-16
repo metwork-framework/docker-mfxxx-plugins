@@ -6,6 +6,8 @@
 #set -eu
 set -x
 
+echo ${GITHUB_EVENT_NAME}
+
 case "${GITHUB_EVENT_NAME}" in
     repository_dispatch)
         BRANCH="${PAYLOAD_BRANCH}"
