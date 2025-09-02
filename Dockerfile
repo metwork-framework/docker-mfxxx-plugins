@@ -19,7 +19,7 @@ ARG REPO
 RUN yum clean all
 RUN yum -y install metwork-${REPO}-full langpacks-fr
 RUN yum -y install metwork-mfext-layer-python3_scientific_core metwork-mfext-layer-python3_devtools
-RUN yum -y install initscripts vim coreutils-common cronie make
+RUN yum -y install initscripts vim coreutils-common cronie make gcc diffutils file
 
 COPY root /
 RUN /build/s6_overlay.sh && \
